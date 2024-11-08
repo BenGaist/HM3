@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,7 +26,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Button switcherA = findViewById(R.id.switcherA);
-
+        EditText edit = findViewById(R.id.edit);
+        String text = edit.getText().toString();
+        if (!text.isEmpty())
+        {
+            switcherA.setVisibility(View.VISIBLE);
+        }
         switcherA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
