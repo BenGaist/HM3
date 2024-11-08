@@ -1,6 +1,8 @@
 package com.example.hm3;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -28,6 +30,13 @@ public class MainActivity extends AppCompatActivity {
         Button switcherA = findViewById(R.id.switcherA);
         EditText edit = findViewById(R.id.edit);
         String text = edit.getText().toString();
+
+        SharedPreferences sharedPref = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("username", "JohnDoe");
+        editor.putInt("age", 30);
+        editor.apply();
+
         if (!text.isEmpty())
         {
             switcherA.setVisibility(View.VISIBLE);

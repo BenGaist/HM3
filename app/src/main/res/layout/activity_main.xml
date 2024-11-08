@@ -23,11 +23,11 @@
         android:id="@+id/edit"
         android:layout_width="329dp"
         android:layout_height="75dp"
+        android:hint="type smt here"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
-        android:hint="type smt here"/>
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
