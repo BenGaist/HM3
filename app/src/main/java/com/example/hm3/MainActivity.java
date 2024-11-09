@@ -29,23 +29,16 @@ public class MainActivity extends AppCompatActivity {
 
         Button switcherA = findViewById(R.id.switcherA);
         EditText edit = findViewById(R.id.edit);
-        String text = edit.getText().toString();
 
-        SharedPreferences sharedPref = getSharedPreferences("MyPrefs", MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putString("username", "JohnDoe");
-        editor.putInt("age", 30);
-        editor.apply();
 
-        if (!text.isEmpty())
-        {
-            switcherA.setVisibility(View.VISIBLE);
-        }
+
+
         switcherA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                String text = edit.getText().toString();
                 Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                intent.putExtra("enteredText", text);
                 startActivity(intent);
             }
         });

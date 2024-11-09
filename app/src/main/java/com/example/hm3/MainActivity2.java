@@ -1,10 +1,13 @@
 package com.example.hm3;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,8 +31,16 @@ public class MainActivity2 extends AppCompatActivity {
             return insets;
         });
 
-        Button switcherB = findViewById(R.id.switcherB);
+        String enteredText = getIntent().getStringExtra("enteredText");
 
+        Button switcherB = findViewById(R.id.switcherB);
+        TextView secondTxt = findViewById(R.id.secondWindowTxt);
+        if (!enteredText.isEmpty()) {
+            secondTxt.setText(enteredText);
+        }
+        else {
+            secondTxt.setText("Ben");
+        }
         switcherB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
