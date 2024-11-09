@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+
         Button switcherA = findViewById(R.id.switcherA);
         EditText edit = findViewById(R.id.edit);
 
